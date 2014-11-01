@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Technicolor Boxes</title>
+	</head>
+	<style type="text/css">
+	body {
+		margin-left: auto;
+		margin-right: auto;
+		background-color: gray;
+	}
+	.smallBox {
+		height: 100px;
+		width: 100px;
+		display: inline-block;
+		background-color: none;
+		margin: 0;
+	}
+	.smallBox:hover {
+		box-shadow: 0 0 3px white;
+
+	}
+	</style>
+	<script type="text/javascript">
+	var generateBox = function(){
+		for(var i = 0; i < 60; i++){
+			var newBox = document.createElement("div");
+			newBox.className = "smallBox";
+			document.getElementById("bigBox").appendChild(newBox);
+			newBox.onmouseover = function(){
+				var newColor = "rgb(" + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + ")";
+				this.style.backgroundColor = newColor; 
+			}
+		}
+	}
+	</script>
+	<body id="body" onload="generateBox()">
+		<div id="bigBox"></div>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<title>Mondrian</title>
+</head>
+<style type="text/css">
+table td { 
+	border-left: 10px solid #000; 
+	border-bottom: 10px solid #000;
+}
+table td:first-child { 
+	border-left: none;
+}
+table tr:last-child td {
+	border-bottom: none;
+}
+tr:nth-child(2) {
+	height: 150px;
+}
+#table1 {
+	border: 1px solid black;
+	height: 400px;
+	width: 500px;
+	border-collapse: collapse;
+}
+.blue {
+	background-color: blue;
+}
+.yellow {
+	background-color: yellow;
+}
+.red {
+	background-color: red;
+}
+#div1, #div2 {
+	display: inline-block;
+	width: 200px;
+	height: 300px;
+}
+.palette {
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: relative;
+	margin: 10px;
+	top: 0;
+	left: 0;
+}
+</style>
+<body>
+	<div id="div1">
+		<div class="palette blue" onclick="changeBrushColor('blue')"></div>
+		<div class="palette yellow" onclick="changeBrushColor('yellow')"></div>
+		<div class="palette red" onclick="changeBrushColor('red')"></div>
+	</div>
+	<div id="div2">
+		<table id="table1">
+			<tr>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+			</tr>
+			<tr>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+			</tr>
+			<tr>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+			</tr>
+			<tr>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+				<td onclick="changeBlockColor(this)"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+<script type="text/javascript">
+	var brushColor = "";
+	var changeBrushColor = function(color){
+		brushColor = color;
+	}
+	var changeBlockColor = function(element){
+		element.style.backgroundColor = brushColor;
+	}
+</script>
+</html>

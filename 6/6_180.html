@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<title>Day Tracker</title>
+</head>
+<style type="text/css">
+div {
+	border: 1px solid black;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	background-color: yellow;
+	display: inline-block;
+}
+.selected {
+ 	background-color: green;
+ 	height: 200px;
+}
+</style>
+<script type="text/javascript">
+var d = new Date();
+var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var result = weekday[d.getDay()];
+var changeColor = function() {
+	document.getElementById(result).className = "selected";
+	document.getElementById(result).innerHTML = "Hello, today is " + result;
+}
+</script>
+<body onload="changeColor()">
+	<div id="Sunday">Sunday</div>
+	<div id="Monday">Monday</div>
+	<div id="Tuesday">Tuesday</div>
+	<div id="Wednesday">Wednesday</div>
+	<div id="Thursday">Thursday</div>
+	<div id="Friday">Friday</div>
+	<div id="Saturday">Saturday</div>
+</body>
+</html>
